@@ -24,31 +24,9 @@ namespace Training.User.Middleware
             }
             catch (Exception ex)
             {
-                if (ex is ArgumentException userNotFoundException)
-                {
-                    // Log the exception and handle it based on its type
-                    _logger.LogError($"User not found: {userNotFoundException.Message}", userNotFoundException);
-
-                    context.Response.StatusCode = (int)HttpStatusCode.BadRequest; // Use appropriate status code
-                    context.Response.ContentType = "application/json";
-
-                    var problemDetails = new ProblemDetails
-                    {
-                        Type = "https://datatracker.ietf.org/doc/html/rfc7231#section-6.6.1",
-                        Title = "Bad Request",
-                        Detail = $"Error Message: {userNotFoundException.Message}",
-                        Status = context.Response.StatusCode,
-                        Instance = context.Request.Path,
-                    };
-
-                    // Write the response as JSON
-                    await context.Response.WriteAsJsonAsync(problemDetails);
-                }
-                else
-                {
                     // Handle other exceptions and log them
                     LogException(context, ex);
-                }
+                
             }
         }
         private void LogException(HttpContext context, Exception ex)
