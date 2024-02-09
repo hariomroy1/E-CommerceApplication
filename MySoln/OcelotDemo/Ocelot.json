@@ -1,0 +1,67 @@
+﻿{
+  "Routes": [
+    //{
+    //  "DownstreamPathTemplate": "/api/Account/{everything}",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 7226
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/api/Account/{everything}",
+    //  "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    //},
+    {
+      "DownstreamPathTemplate": "/api/Product/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7186
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Product/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      //"ServiceName": "MSProduct",
+      //"LoadBalancerOptions": {
+      //  "Type": "RoundRobin"
+      //}
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cart/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7147
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Cart/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Order/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7223
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Order/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration",
+    "UseServiceDiscovery": true,
+    "ServiceDiscoveryProvider": {
+      "Type": "Eureka",
+      "Host": "localhost",
+      "Port": "8762"
+    },
+    "BaseUrl": "http://localhost:7142"
+  }
+}

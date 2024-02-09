@@ -1,0 +1,65 @@
+version: '3.4'
+
+networks:
+  demouserapp:
+services:
+  demoappdb:
+    container_name: app-db
+    image: mcr.microsoft.com/windows/servercore:ltsc2019
+    ports:
+      - 8003:1433 
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=password@12345
+    networks:
+      - demouserapp
+  training.user:
+    container_name: demo-traininguser
+    image: ${DOCKER_REGISTRY-}traininguser
+    build:
+      context: .
+      dockerfile: Training.User\Dockerfile
+    ports:
+     - 8003:80
+    depends_on:
+     - demoappdb
+    environment:
+     - DB_HOST=demoappdb
+     - DB_NAME=DemoUserApp
+     - DB_SA_PASSWORD=password@12345
+    networks:
+     - demouserapp
+  taining.id.user:
+    image: ${DOCKER_REGISTRY-}tainingiduser
+    build:
+      context: .
+      dockerfile: Taining.Id.User\Dockerfile
+
+
+  training.product:
+    image: ${DOCKER_REGISTRY-}trainingproduct
+    build:
+      context: .
+      dockerfile: Training.Product\Dockerfile
+
+
+  training.cart:
+    image: ${DOCKER_REGISTRY-}trainingcart
+    build:
+      context: .
+      dockerfile: Training.Cart\Dockerfile
+
+
+  training.order:
+    image: ${DOCKER_REGISTRY-}trainingorder
+    build:
+      context: .
+      dockerfile: Training.Order\Dockerfile
+
+
+  ocelotdemo:
+    image: ${DOCKER_REGISTRY-}ocelotdemo
+    build:
+      context: .
+      dockerfile: OcelotDemo\Dockerfile
+

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Taining.Id.User.props" />
+</Project>

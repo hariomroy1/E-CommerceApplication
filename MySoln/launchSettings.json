@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "training.user": "StartDebugging",
+        "taining.id.user": "StartDebugging",
+        "training.product": "StartDebugging",
+        "training.cart": "StartDebugging",
+        "training.order": "StartDebugging",
+        "ocelotdemo": "StartDebugging"
+      }
+    }
+  }
+}
