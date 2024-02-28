@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o9k7cARooN946ETvWzb8NG2G9Ihgpb1DSG8UNVBidAwvcYStq8u1vb8Zcjrfv0rRtXu80xhB9fN+E/KPWOqRUw==",
+  "dgSpecHash": "6A6lSBAuKv+HMPxZRW5yg6MxR24t/HetRXZ0xemNs7SHOTOkOdwCnetrecqdP+VbVmRW8SyvDX30BmrP8mqVTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Taining.Id.User\\Taining.Id.User.csproj",
+  "projectFilePath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Taining.Id.User\\Taining.Id.User.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hariomroy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hariomroy\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",

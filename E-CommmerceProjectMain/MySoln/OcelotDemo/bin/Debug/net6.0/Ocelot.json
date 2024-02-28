@@ -1,0 +1,149 @@
+﻿{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/Product/AddProduct",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productcont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Product/AddProduct",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "admin"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Product/getproducts",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productcont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Product/getproducts",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "user"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Product/FindProduct/{productId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productcont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Product/FindProduct/{productId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "user"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Product/DeleteProduct/{productId}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productcont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Product/DeleteProduct/{productId}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "admin"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Product/UpdateProduct",
+      "UpstreamHttpMethod": [ "PUT" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "productcont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Product/UpdateProduct",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "admin"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Cart/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cartcont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Cart/{everything}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "user"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/Order/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ordercont",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Order/{everything}",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "Role": "user"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/Account/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "usercont",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Account/{everything}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "POST", "DELETE" ]
+    }
+  ]
+}

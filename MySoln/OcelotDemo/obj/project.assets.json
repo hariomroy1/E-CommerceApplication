@@ -2415,11 +2415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\MySoln\\OcelotDemo\\OcelotDemo.csproj",
+      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\OcelotDemo\\OcelotDemo.csproj",
       "projectName": "OcelotDemo",
-      "projectPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\OcelotDemo\\OcelotDemo.csproj",
+      "projectPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\OcelotDemo\\OcelotDemo.csproj",
       "packagesPath": "C:\\Users\\hariomroy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\OcelotDemo\\obj\\",
+      "outputPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\OcelotDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hariomroy\\AppData\\Roaming\\NuGet\\NuGet.Config",

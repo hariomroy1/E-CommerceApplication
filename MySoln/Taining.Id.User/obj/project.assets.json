@@ -3279,11 +3279,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Taining.Id.User\\Taining.Id.User.csproj",
+      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Taining.Id.User\\Taining.Id.User.csproj",
       "projectName": "Taining.Id.User",
-      "projectPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Taining.Id.User\\Taining.Id.User.csproj",
+      "projectPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Taining.Id.User\\Taining.Id.User.csproj",
       "packagesPath": "C:\\Users\\hariomroy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Taining.Id.User\\obj\\",
+      "outputPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Taining.Id.User\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hariomroy\\AppData\\Roaming\\NuGet\\NuGet.Config",

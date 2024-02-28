@@ -2,9 +2,8 @@
 using DataLayer.Entities;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using System.Drawing.Printing;
 using Microsoft.AspNetCore.Identity;
-using Training.User.Model;
+
 
 namespace Traingin.User.Controllers
 {
@@ -27,60 +26,14 @@ namespace Traingin.User.Controllers
             _logger = logger;
 
         }
-        /*   public RegisterController(UserManager<IdentityUser> userManager,
-                                     RoleManager<IdentityRole> roleManager,
-                                     IConfiguration configuration)
-           {
-               _userManager = userManager;
-               _roleManager = roleManager;
-               _configuration = configuration;
-           }
-   */
+
         /// <summary>
         /// Creates a new user registration based on the provided user entity.
         /// </summary>
         /// <param name="user">The user entity containing registration details.</param>
         /// <returns>An IActionResult representing the result of the registration operation.</returns>
 
-        /*   [HttpPost("CreateRegister")]
-           public async Task<IActionResult> Create(RegisterEntity registeruser, string role)
-           {
-               //check user Exist
-               var userExist = await _userManager.FindByEmailAsync(registeruser.Email);
-               if (userExist != null)
-               {
-                   throw new Exception("User is Already Exist! Please Try with another Email");
-               }
-               //Add the user in database
-               IdentityUser user = new()
-               {
-                   Email = registeruser.Email,
-                   SecurityStamp = Guid.NewGuid().ToString(),
-                   UserName = registeruser.Name,
-               };
-               if(await _roleManager.RoleExistsAsync(role))
-               {
-                   var result = await _userManager.CreateAsync(user, registeruser.Password);
-                   if(! result.Succeeded)
-                   {
-                       throw new Exception("User Failed to Create!");
-                   }
-                   //Add Role to the user
-                  await _userManager.AddToRoleAsync(user, role);
-                   return StatusCode(StatusCodes.Status200OK,
-                       new Response { Status = "Success", Message = "User Created SuccessFully" }
-                       );
-               }
-               else
-               {
-                   throw new Exception("This Role does not exist !");
 
-               }
-
-
-
-
-           }*/
 
         [HttpPost("CreateRegister")]
         public IActionResult Create(RegisterEntity user)
@@ -106,38 +59,6 @@ namespace Traingin.User.Controllers
         /// If the login is successful, returns Ok with user details.
         /// If the user is not found, returns NoContent.
         /// </returns>
-
-        /* [HttpPost("LoginUser")]
-         public async Task<IActionResult> Login(LoginEntity loginEntity, string role)
-         {
-             // Check if the user exists based on the provided email
-             var user = await _userManager.FindByEmailAsync(loginEntity.Email);
-             if (user == null)
-             {
-                 // User not found, return appropriate response
-                 throw new Exception("Email is not valid");
-             }
-
-             // Use UserManager to verify the user's password
-             var result = await _userManager.CheckPasswordAsync(user, loginEntity.Password);
-             if (!result)
-             {
-                 // Password doesn't match, return appropriate response
-                 throw new InvalidOperationException("password is not valid");
-             }
-
-             // Optionally, check if the user has a specific role
-             if (!string.IsNullOrEmpty(role) && !await _userManager.IsInRoleAsync(user, role))
-             {
-                 // User does not have the required role, return appropriate response
-                 throw new Exception("Please provide a Role");
-             }
-
-             // User exists, credentials are valid, return user details
-             return Ok(user);
-         }
- */
-
 
         [HttpPost("LoginUser")]
         public IActionResult Login(LoginEntity user)

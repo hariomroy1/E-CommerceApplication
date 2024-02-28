@@ -1,0 +1,27 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Product/GetProducts",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/Product/GetProducts",
+      "UpstreamHttpMethod": [ "GET" ],
+      "ServiceName": "TrProductservice",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "DownstreamScheme": "http",
+    "AdministrationPath": "/administration",
+    "UseServiceDiscovery": true,
+    "ServiceDiscoveryProvider": {
+      "Type": "Eureka",
+      "Host": "localhost",
+      "Port": "8762"
+    },
+    "BaseUrl": "http://localhost:7142"
+  }
+
+}

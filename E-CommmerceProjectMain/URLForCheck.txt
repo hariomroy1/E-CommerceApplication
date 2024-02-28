@@ -1,0 +1,78 @@
+For login:
+
+http://localhost:7142/api/Account/Login
+
+Request:
+{
+  "username":"user1",
+  "password":"user1"
+}
+
+Response:
+{
+    "userName": "user1",
+    "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjEiLCJSb2xlIjoidXNlciIsIm5iZiI6MTcwNzkxOTcxNywiZXhwIjoxNzA3OTIwOTE3LCJpYXQiOjE3MDc5MTk3MTd9.gsD2CtPP7JVOREdfvUTV0aTn2lJaWJppg9jg-P1ACVo",
+    "expiresIn": 1199
+}
+
+Product:
+
+http://localhost:7142/api/Product/GetProducts
+Response: all product list
+
+http://localhost:7142/api/Product/FindProduct/1
+Response: particular product with product id
+
+http://localhost:7142/api/Product/AddProduct
+
+Request:
+{
+  "productName": "grapes",
+  "description": "good",
+  "category": "string",
+  "quantity": 120,
+  "price": 30,
+  "discount": 0,
+  "specification": "string",
+  "data": "string"
+}
+
+Responses: Success
+
+cart
+http://localhost:7142/api/Cart/AddToCart
+Request:
+{
+  "cartId":1,
+  "registerId": 1,
+  "productId": 2,
+  "quantity": 20
+}
+Response: 
+{
+    "message": "Product Added to the cart!"
+}
+
+http://localhost:7142/api/Cart/GetCartItems/5
+Response: get cart items with register id
+
+order
+
+http://localhost:7223/api/Order/GetOrders?registerId=6
+Req: Get order details with userid
+http://localhost:7142/api/Order/PlaceOrder
+Request:
+{
+  "registerId": 1,
+  "productId": 1,
+  "quantityOfItems": 20,
+  "orderDate": "2024-02-06T16:00:59.355Z",
+  "totalPrice": 110,
+  "updatedQuantities": [
+    0
+  ]
+}
+Response:
+{
+    "message": "Order placed successfully!"
+}

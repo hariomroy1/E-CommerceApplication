@@ -1,0 +1,10 @@
+docker network create --driver nat dockernetwork
+
+docker pull roykumar/userimg
+docker pull roykumar/productimg
+docker pull roykumar/cartimg
+docker pull roykumar/orderimg
+
+docker run --network dockernetwork --name cont -p 7226:80  -d img
+
+

@@ -1,0 +1,212 @@
+name: dockercompose5613889658962044086
+services:
+  demoappdb:
+    container_name: app-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: password@12345
+    image: mcr.microsoft.com/windows/servercore:ltsc2019
+    networks:
+      demouserapp: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "8003"
+        protocol: tcp
+  ocelotdemo:
+    build:
+      context: C:\Users\hariomroy\Desktop\MySoln
+      dockerfile: OcelotDemo\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: ocelotdemo
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+  taining.id.user:
+    build:
+      context: C:\Users\hariomroy\Desktop\MySoln
+      dockerfile: Taining.Id.User\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: tainingiduser
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+  training.cart:
+    build:
+      context: C:\Users\hariomroy\Desktop\MySoln
+      dockerfile: Training.Cart\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: trainingcart
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+  training.order:
+    build:
+      context: C:\Users\hariomroy\Desktop\MySoln
+      dockerfile: Training.Order\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: trainingorder
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+  training.product:
+    build:
+      context: C:\Users\hariomroy\Desktop\MySoln
+      dockerfile: Training.Product\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: trainingproduct
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+  training.user:
+    build:
+      context: C:\Users\hariomroy\Desktop\MySoln
+      dockerfile: Training.User\Dockerfile
+    container_name: demo-traininguser
+    depends_on:
+      demoappdb:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      DB_HOST: demoappdb
+      DB_NAME: DemoUserApp
+      DB_SA_PASSWORD: password@12345
+    image: traininguser
+    networks:
+      demouserapp: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8003"
+        protocol: tcp
+      - mode: ingress
+        target: 80
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/Microsoft/UserSecrets
+        target: C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\hariomroy\AppData\Roaming/ASP.NET/Https
+        target: C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose5613889658962044086_default
+  demouserapp:
+    name: dockercompose5613889658962044086_demouserapp

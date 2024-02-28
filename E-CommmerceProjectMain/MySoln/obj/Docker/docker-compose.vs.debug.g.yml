@@ -1,0 +1,192 @@
+version: '3.4'
+
+services:
+  ocelotdemo:
+    image: ocelotdemo:dev
+    container_name: "OcelotDemo"
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "OcelotDemo"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\hariomroy\Desktop\MySoln\OcelotDemo:C:\app
+      - C:\Users\hariomroy\Desktop\MySoln:C:\src
+      - C:\Users\hariomroy\onecoremsvsmon\17.7.10830.2693:C:\remote_debugger:ro
+      - C:\Users\hariomroy\.nuget\packages\:c:\.nuget\packages:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\win10-x64\net6.0:C:\TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\win10-x64\net6.0:C:\HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages  \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "C:\\remote_debugger\\x64\\utils\\KillProcess.exe dotnet.exe"
+
+  taining.id.user:
+    image: tainingiduser:dev
+    container_name: "Taining.Id.User"
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Taining.Id.User"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\hariomroy\Desktop\MySoln\Taining.Id.User:C:\app
+      - C:\Users\hariomroy\Desktop\MySoln:C:\src
+      - C:\Users\hariomroy\onecoremsvsmon\17.7.10830.2693:C:\remote_debugger:ro
+      - C:\Users\hariomroy\.nuget\packages\:c:\.nuget\packages:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\win10-x64\net6.0:C:\TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\win10-x64\net6.0:C:\HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages  \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "C:\\remote_debugger\\x64\\utils\\KillProcess.exe dotnet.exe"
+
+
+  training.cart:
+    image: trainingcart:dev
+    container_name: "Training.Cart"
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Training.Cart"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\hariomroy\Desktop\MySoln\Training.Cart:C:\app
+      - C:\Users\hariomroy\Desktop\MySoln:C:\src
+      - C:\Users\hariomroy\onecoremsvsmon\17.7.10830.2693:C:\remote_debugger:ro
+      - C:\Users\hariomroy\.nuget\packages\:c:\.nuget\packages:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\win10-x64\net6.0:C:\TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\win10-x64\net6.0:C:\HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages  \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "C:\\remote_debugger\\x64\\utils\\KillProcess.exe dotnet.exe"
+
+
+  training.order:
+    image: trainingorder:dev
+    container_name: "Training.Order"
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Training.Order"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\hariomroy\Desktop\MySoln\Training.Order:C:\app
+      - C:\Users\hariomroy\Desktop\MySoln:C:\src
+      - C:\Users\hariomroy\onecoremsvsmon\17.7.10830.2693:C:\remote_debugger:ro
+      - C:\Users\hariomroy\.nuget\packages\:c:\.nuget\packages:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\win10-x64\net6.0:C:\TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\win10-x64\net6.0:C:\HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages  \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "C:\\remote_debugger\\x64\\utils\\KillProcess.exe dotnet.exe"
+
+
+  training.product:
+    image: trainingproduct:dev
+    container_name: "Training.Product"
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Training.Product"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\hariomroy\Desktop\MySoln\Training.Product:C:\app
+      - C:\Users\hariomroy\Desktop\MySoln:C:\src
+      - C:\Users\hariomroy\onecoremsvsmon\17.7.10830.2693:C:\remote_debugger:ro
+      - C:\Users\hariomroy\.nuget\packages\:c:\.nuget\packages:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\win10-x64\net6.0:C:\TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\win10-x64\net6.0:C:\HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages  \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "C:\\remote_debugger\\x64\\utils\\KillProcess.exe dotnet.exe"
+
+
+  training.user:
+    image: traininguser:dev
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "Training.User"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_PACKAGES=C:\.nuget\packages
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      - NUGET_FALLBACK_PACKAGES=
+    volumes:
+      - C:\Users\hariomroy\Desktop\MySoln\Training.User:C:\app
+      - C:\Users\hariomroy\Desktop\MySoln:C:\src
+      - C:\Users\hariomroy\onecoremsvsmon\17.7.10830.2693:C:\remote_debugger:ro
+      - C:\Users\hariomroy\.nuget\packages\:c:\.nuget\packages:ro
+      - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\win10-x64\net6.0:C:\TokenService.Proxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\HotReloadProxy\win10-x64\net6.0:C:\HotReloadProxy:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload:C:\HotReloadAgent:ro
+
+    entrypoint: C:\\remote_debugger\\x64\\msvsmon.exe /noauth /anyuser /silent /nostatus /noclrwarn /nosecuritywarn /nofirewallwarn /nowowwarn /timeout:2147483646 /LogDebuggeeOutputToStdOut
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "\"C:\\Program Files\\dotnet\\dotnet.exe\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath c:\\.nuget\\packages  \"\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "C:\\app"
+      com.microsoft.visualstudio.debuggee.killprogram: "C:\\remote_debugger\\x64\\utils\\KillProcess.exe dotnet.exe"
+

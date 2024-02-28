@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vtY9hG8T7B8a0Yq68Lr2t3kDFY5KqU2EOb4SzVsfYCsrJu6ZHXHeQMCSBE9MQx6mMH4etzvvury+EvSvPtrUoQ==",
+  "dgSpecHash": "bQ6CCTLw4B2WkIKvc9rMv/Vsva5h29G9UIrWmnEo3OJ0Dw4Fw5ZtFOxJ0psm4xzljG12p0PA0Tw27K+RSiTvkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Training.Cart\\Training.Cart.csproj",
+  "projectFilePath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Training.Cart\\Training.Cart.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hariomroy\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\hariomroy\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

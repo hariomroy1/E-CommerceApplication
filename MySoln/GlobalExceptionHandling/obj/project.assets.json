@@ -5018,11 +5018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj",
+      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj",
       "projectName": "GlobalExceptionHandling",
-      "projectPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj",
+      "projectPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj",
       "packagesPath": "C:\\Users\\hariomroy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\GlobalExceptionHandling\\obj\\",
+      "outputPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\GlobalExceptionHandling\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hariomroy\\AppData\\Roaming\\NuGet\\NuGet.Config",

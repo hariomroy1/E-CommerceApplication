@@ -7632,11 +7632,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Training.Product\\Training.Product.csproj",
+      "projectUniqueName": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Training.Product\\Training.Product.csproj",
       "projectName": "Training.Product",
-      "projectPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Training.Product\\Training.Product.csproj",
+      "projectPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Training.Product\\Training.Product.csproj",
       "packagesPath": "C:\\Users\\hariomroy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\Training.Product\\obj\\",
+      "outputPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\Training.Product\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hariomroy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7653,8 +7653,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\hariomroy\\Desktop\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj": {
-              "projectPath": "C:\\Users\\hariomroy\\Desktop\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj"
+            "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj": {
+              "projectPath": "C:\\Users\\hariomroy\\Desktop\\GitHub\\MySoln\\GlobalExceptionHandling\\GlobalExceptionHandling.csproj"
             }
           }
         }
